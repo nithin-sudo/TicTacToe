@@ -7,6 +7,7 @@ public class TicTacToeGame {
 		createBoard();
 		userChoice();
 		printBoard();
+		userBoard();
 	}
 	
 	/**({@summary}
@@ -41,7 +42,6 @@ public class TicTacToeGame {
 	//Displaying the board
 	static void printBoard()
 	{	
-		System.out.println("The Current Board is:");
 		System.out.println("|---|---|---|");
 		System.out.println("| " + Board[1] + " | "+ Board[2] + " | " + Board[3]+ " |");
 		System.out.println("|-----------|");
@@ -49,5 +49,16 @@ public class TicTacToeGame {
 		System.out.println("|-----------|");
 		System.out.println("| " + Board[7] + " | "+ Board[8] + " | " + Board[9]+ " |");
 		System.out.println("|---|---|---|");
+	}
+	//Displaying Number board for user to choose desired number
+	public static void userBoard() {
+		int REDIX=10;
+		System.out.println("\n");
+	    for( int i=1; i<10; i++)
+        {
+	    	if (Board[i] !='x' && Board[i] !='o') 
+	    		Board[i] = Character.forDigit(i,REDIX);
+        }
+	    printBoard();
 	}
 }

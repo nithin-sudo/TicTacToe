@@ -2,12 +2,23 @@ package tictactoe;
 import java.util.Scanner;
 public class TicTacToeGame {
 	static char[] Board;
+	static char ch;
+	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args){
 		System.out.println("Welcome to Tic Tac Toe Game");
+		
+		//Calling to Create a Board
 		createBoard();
+		
+		//Asking user to choose x or o
 		userChoice();
+		
+		//Displaying board layout
 		printBoard();
+		
+		//Displaying Board for User to Choose
 		userBoard();
+		userMove();
 	}
 	
 	/**({@summary}
@@ -24,8 +35,7 @@ public class TicTacToeGame {
 	public static void userChoice() 
 	{
 		System.out.println("Enter the character 'x' or 'o':");
-		Scanner sc = new Scanner(System.in);
-		char ch= sc.next(). charAt(0);
+		ch= sc.next(). charAt(0);
 		if(ch =='x'|| ch =='o')
 		{
 			if(ch=='x')
@@ -60,5 +70,21 @@ public class TicTacToeGame {
 	    		Board[i] = Character.forDigit(i,REDIX);
         }
 	    printBoard();
+	}
+//	User making a move from the user board  
+	public static void userMove() {   
+	    System.out.println("\nEnter a slot number :\n");
+	    int nmb=sc.nextInt();
+	    if (nmb > 0 && nmb <= 9 && Board[nmb]!='x' && Board[nmb]!='o')
+	    {
+	    	Board[nmb]=ch;
+	    	System.out.println(Board[nmb]);
+	    	userBoard();	
+	    }
+	    else
+	    {
+	    	System.out.println("Invalid input");
+	    	userMove();
+	    }
 	}
 }

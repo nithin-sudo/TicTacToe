@@ -6,6 +6,7 @@ public class TicTacToeGame {
 		System.out.println("Welcome to Tic Tac Toe Game");
 		createBoard();
 		userChoice();
+		printBoard();
 	}
 	
 	/**({@summary}
@@ -13,12 +14,12 @@ public class TicTacToeGame {
 	 */
 	public static void createBoard()
 	{
-		Board = new char[9];
-		for (int i = 0; i < 9; i++) {
+		Board = new char[10];
+		for (int i = 0; i <Board.length; i++) {
 			Board[i] = '-';
 		}
 	}
-	 // Asking User to choose between X and O	
+	 // Asking User to choose between x and o
 	public static void userChoice() 
 	{
 		System.out.println("Enter the character 'x' or 'o':");
@@ -27,7 +28,7 @@ public class TicTacToeGame {
 		if(ch =='x'|| ch =='o')
 		{
 			if(ch=='x')
-				System.out.println("Player chosen"+ch+"Computer is o");
+				System.out.println("Player chosen "+ch+" Computer is o");
 			else
 				System.out.println("Player chosen "+ch+" Computer is x");
 		}
@@ -36,5 +37,17 @@ public class TicTacToeGame {
 			System.out.println("Enter Valid input:x or o");
 			userChoice();
 		}
+	}
+	//Displaying the board
+	static void printBoard()
+	{	
+		System.out.println("The Current Board is:");
+		System.out.println("|---|---|---|");
+		System.out.println("| " + Board[1] + " | "+ Board[2] + " | " + Board[3]+ " |");
+		System.out.println("|-----------|");
+		System.out.println("| " + Board[4] + " | "+ Board[5] + " | " + Board[6]+ " |");
+		System.out.println("|-----------|");
+		System.out.println("| " + Board[7] + " | "+ Board[8] + " | " + Board[9]+ " |");
+		System.out.println("|---|---|---|");
 	}
 }

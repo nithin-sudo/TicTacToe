@@ -126,16 +126,10 @@ public class TicTacToeGame {
 				break;
 		case 0:
 				System.out.println("computer's turn");
-				add();
 				break;
 		default:
 			System.out.println("invalid input");
 			whoPlaysFirst();
 		}
-	}
-	public static void add()
-	{
-		int a=10,b=20;
-		System.out.println((a + b));
 	}
 }
